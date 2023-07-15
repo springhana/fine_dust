@@ -1,0 +1,48 @@
+.dust_item {
+  overflow: hidden;
+}
+.dust_detail {
+  height: 350px;
+  width: 600px;
+  box-sizing: border-box;
+  border-bottom: 2px solid #00a086;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.dust_addr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
+.dust_addr p {
+  font-size: 20px;
+}
+.dust_data {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dust_data h1 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 10px auto;
+}
+.dust_data span {
+  font-weight: 500;
+}
+.dust_data p {
+  font-size: 20px;
+}
+.dust {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+.dust_issue h1,
+.dust_clear h1 {
+  font-size: 20px;
+}
