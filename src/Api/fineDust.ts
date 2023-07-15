@@ -1,5 +1,4 @@
 import axios from "axios";
-
 const request = async (url: any) => {
   try {
     const response = await axios.get(url);
