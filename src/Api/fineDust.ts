@@ -8,7 +8,14 @@ const request = async (url: any) => {
   }
 };
 
-export const fetchDust = async (PM: any, Year: any, Page: any) =>
-  request(
-    `${process.env.REACT_APP_END_POINT}?serviceKey=${process.env.REACT_APP_SERVICE_KEY}&returnType=json&numOfRows=100&pageNo=${Page}&year=${Year}&itemCode=${PM}`
-  );
+export const fetchDust = async (PM: any, Year: any, Page: any) => {
+  try {
+    const responseData = await request(
+      `${process.env.REACT_APP_END_POINT}?serviceKey=${process.env.REACT_APP_SERVICE_KEY}&returnType=json&numOfRows=100&pageNo=${Page}&year=${Year}&itemCode=${PM}`
+    );
+    return responseData;
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
+};
