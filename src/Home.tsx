@@ -21,7 +21,7 @@ export default function Home() {
     fetchData();
   }, [PM, year, pageNum]);
 
-  const fineDustSearch = (PM: any, Year: any, Page: any) => {
+  const fineDustSearch = (PM: string, Year: number, Page: string) => {
     setPM(PM);
     setYear(Year);
     setPageNum(Page);
@@ -44,7 +44,18 @@ export default function Home() {
           </div>
         </>
       ) : (
-        <div>null</div>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100%",
+            fontSize: "30px",
+            fontWeight: "bold",
+          }}
+        >
+          Loading...
+        </div>
       )}
     </div>
   );

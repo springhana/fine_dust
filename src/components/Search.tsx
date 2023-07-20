@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import styles from "../css/Search.module.css";
 export const Search = ({ totalCount, numOfRows, fineDustSearch }: any) => {
-  const [page, setPage] = useState([]);
-  const [PM, setPM] = useState("PM10");
-  const [year, setYear] = useState(new Date().getFullYear());
-  const [pageNum, setPageNum] = useState("1");
+  const [page, setPage] = useState<number[]>([]);
+  const [PM, setPM] = useState<string>("PM10");
+  const [year, setYear] = useState<number>(new Date().getFullYear());
+  const [pageNum, setPageNum] = useState<string>("1");
 
   useEffect(() => {
-    const page: any = Math.ceil(totalCount / numOfRows);
-    const pageArray: any = [];
+    const page: number = Math.ceil(totalCount / numOfRows);
+    const pageArray: number[] = [];
     for (let i = 1; i < page + 1; i++) {
       pageArray.push(i);
     }
@@ -63,7 +63,7 @@ export const Search = ({ totalCount, numOfRows, fineDustSearch }: any) => {
         </div>
 
         <div className={styles.page}>
-          {page.map((page: any) => (
+          {page.map((page: number) => (
             <div
               onClick={(e: any) => {
                 setPageNum(e.target.textContent);

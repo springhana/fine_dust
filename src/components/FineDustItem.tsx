@@ -1,6 +1,21 @@
 import styles from "../css/FineDustItem.module.css";
+
+interface DustData {
+  districtName: string;
+  moveName: string;
+  itemCode: string;
+  issueGbn: string;
+  sn: number;
+  issueDate: string;
+  issueTime: string;
+  issueVal: number;
+  clearDate: string;
+  clearTime: string;
+  clearVal: number;
+}
+
 export default function FineDustItem({ dustData }: any) {
-  const 미세먼지색 = (dust: any) => {
+  const 미세먼지색 = (dust: number) => {
     if (dust <= 30) {
       return "#0000F5";
     } else if (dust <= 80) {
@@ -17,7 +32,7 @@ export default function FineDustItem({ dustData }: any) {
   return (
     <div className={styles.dust_item}>
       {dustData
-        ? dustData.items.map((data: any, index: number) => (
+        ? dustData.items.map((data: DustData, index: number) => (
             <div key={index} style={{ position: "relative" }}>
               <div className={styles.dust_detail}>
                 <div className={styles.dust_addr}>
